@@ -1,0 +1,28 @@
+name: ebook_library
+description: A digital ebook library — bookshelf-style Flutter client for the Rails API.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  provider: ^6.1.1
+  http: ^1.2.0
+  file_picker: ^8.1.4
+  syncfusion_flutter_pdfviewer: ^27.1.48
+  url_launcher: ^6.2.4
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.4
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
