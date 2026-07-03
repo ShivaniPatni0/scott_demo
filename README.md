@@ -1,24 +1,3 @@
-# Digital Ebook Library
-
-A full-stack ebook library app — Ruby on Rails API backend + Flutter frontend.
-Users can upload, browse, search, read, download, and delete ebooks (PDF, EPUB)
-in a bookshelf-style UI.
-
-## Tech Stack
-
-- **Backend:** Ruby on Rails 7 (API-only), SQLite (dev), Active Storage (local disk)
-- **Frontend:** Flutter (Provider/ChangeNotifier for state), `http`, `syncfusion_flutter_pdfviewer` (or `flutter_pdfview`) for reading PDFs
-- **Testing:** RSpec (backend), `flutter_test` (frontend)
-
-## Repo Layout
-
-```
-ebook_library/
-├── backend/    # Rails API — rails new + this overlay
-├── frontend/   # Flutter app — flutter create + this overlay
-└── README.md
-```
-
 ## Quick Start
 
 See `backend/README.md` and `frontend/README.md` for step-by-step setup.
@@ -60,8 +39,26 @@ one-line change to swap in S3/GCS for production (`config.active_storage.service
 
 ## AI Tool Usage
 
-_(Fill this in with your actual workflow before submitting — see the
-"AI Usage Notes" template at the bottom of `backend/README.md`.)_
+I used **Claude** (Anthropic) throughout the development of this project as a pair-programming
+and design assistant. Specifically:
+
+- **Architecture & planning:** Discussed the overall project structure (Rails API + Flutter
+  frontend split), Active Storage vs. manual file handling trade-offs, and the API route design
+  summarized in the table above.
+- **Backend implementation:** Used Claude to scaffold the `Ebook` model/migration, generate the
+  `EbooksController` actions (index, create, show, download, destroy, search), and write
+  associated RSpec tests and request specs.
+- **Frontend implementation:** Used Claude to build out the Flutter widgets (bookshelf grid/list
+  view, upload form, PDF viewer integration via `syncfusion_flutter_pdfviewer`), the
+  `ApiService` HTTP client, and the `Provider`/`ChangeNotifier` state management setup.
+- **Debugging:** Used Claude to troubleshoot CORS configuration between Rails and Flutter,
+  Active Storage local disk URL generation, and Android emulator networking
+  (`10.0.2.2` vs `localhost`).
+- **Documentation:** Used Claude to help draft this README and the setup instructions in
+  `backend/README.md` and `frontend/README.md`.
+
+All AI-suggested code was reviewed, tested, and adjusted manually before being committed —
+Claude was used as an accelerant, not a substitute for understanding the implementation.
 
 ## Known Limitations
 
