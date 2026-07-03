@@ -1,0 +1,4 @@
+# Append these to the .gitignore that `rails new` already generates
+/storage/*
+!/storage/.keep
+/db/seed_files/
